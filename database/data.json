@@ -1,9 +1,1 @@
-{
-  "todos": [
-    {
-      "id": "7b67d75b-4d28-4485-bd24-5aaa19c74ea1",
-      "txt": "Faire la vaisselle",
-      "done": false
-    }
-  ]
-}
+{"todos":[{"txt":"jaco","id":"a43c685e-d3bc-4a97-8f45-e8be4337f0c1","done":false},{"txt":"coco","id":"4119ba37-6ccc-4134-b553-c6693dec7c86","done":false},{"txt":"qsdqsdsqdsqd","id":"4f6f2e20-e4b6-480c-89d9-1297af7e35fd","done":false},{"txt":"qsdqdsdsqdsqsqd","id":"12177842-3349-49f1-a636-f5abbee0d153","done":false},{"txt":"Faire les courses","id":"dc8c36e0-94c7-4e1c-b5f7-9f6c0de0241b","done":false},{"txt":"sqsd","id":"a21e68d8-2b6e-4cad-98c1-807a1d7ac0dd","done":false},{"id":"7b67d75b-4d28-4485-bd24-5aaa19c74ea1","txt":"Faire la vaisselle","done":false}]}

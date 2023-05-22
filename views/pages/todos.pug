@@ -3,6 +3,12 @@ extends ../layout
 block content
   h1 Liste des tâches
 
+  input(placeholder="Nouvelle tâche" autofocus)
+  button Go!
+
   ul.todos
     each todo in todos
       li(class=todo.done?'done':'')= todo.txt
+
+block javascript
+  script(src="/static/js/todos.js")

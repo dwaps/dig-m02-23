@@ -6,6 +6,7 @@ const router = require('./routing');
 app.set('view engine', 'pug');
 // app.set('views', resolve('views'));
 
+app.use(express.json());
 app.use('/static', express.static(resolve('public')));
 app.use(router);
 
