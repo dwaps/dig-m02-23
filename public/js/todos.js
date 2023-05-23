@@ -13,7 +13,8 @@ btSubmit.addEventListener('click', () => {
   }
 });
 
-const todosInput = document.querySelectorAll('li + input');
+const todosInput = document.querySelectorAll('li ~ input');
+const btsDelete = document.querySelectorAll('li + button');
 
 todosInput.forEach(todoInput => {
   todoInput.addEventListener('keyup', e => {
@@ -31,5 +32,15 @@ todosInput.forEach(todoInput => {
       })
       .then(res => location.reload());
     }
+  })
+});
+
+btsDelete.forEach(bt => {
+  bt.addEventListener('click', () => {
+    fetch('/api/todos/' + bt.dataset.id, {
+      method: 'delete',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(res => location.reload());
   })
 })

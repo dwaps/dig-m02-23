@@ -30,5 +30,7 @@ exports.updateTodo = (req, res) => {
 }
 
 exports.deleteTodo = (req, res) => {
-  res.json(todos);
+  const newTodos = todos.filter(t => t.id != req.params.id);
+  writeFileSync(resolve('database', 'data.json'), JSON.stringify({ todos: newTodos }));
+  res.status(200).end('OK');
 }
