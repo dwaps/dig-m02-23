@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
+const {
+  db: { host, user, password, db },
+} = require(`../environments/env.${process.env.NODE_ENV}`);
 
 mongoose
-  .connect('mongodb+srv://coco:coco@cluster0.ya6eeax.mongodb.net/todos?retryWrites=true&w=majority')
+  .connect(`mongodb+srv://${user}:${password}@${host}/${db}?retryWrites=true&w=majority`)
   .then(() => console.log('Connected to DB !'));
