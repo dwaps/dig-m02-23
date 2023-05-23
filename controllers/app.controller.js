@@ -1,4 +1,4 @@
-const { todos } = require('../database/data.json');
+const Todo = require('../database/models/todo');
 
 exports.homeCtrl = (req, res) => {
   res.render('pages/home');
@@ -9,7 +9,9 @@ exports.presentationCtrl = (req, res) => {
 }
 
 exports.todosCtrl = (req, res) => {
-  res.render('pages/todos', { todos });
+  Todo.find()
+    .then(todos => res.render('pages/todos', { todos }))
+    .catch(() => res.render('pages/todos', { todos: [] }))
 }
 
 exports.contactCtrl = (req, res) => {

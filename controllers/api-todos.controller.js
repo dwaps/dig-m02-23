@@ -1,25 +1,25 @@
-const { todos } = require('../database/data.json');
 const { randomUUID } = require('crypto');
 const { resolve } = require('path');
 const { writeFileSync } = require('fs');
+const Todo = require('../database/models/todo');
 
 exports.getTodos = (req, res) => {
-  res.json(todos);
+  res.end();
 }
 
 exports.getTodo = (req, res) => {
-  res.json(todos);
+  res.end();
 }
 
 exports.createTodo = (req, res) => {
-  const todo = {
+  const todo = new Todo({
     txt: req.body.txt,
     id: randomUUID(),
     done: false
-  };
-  todos.unshift(todo);
-  writeFileSync(resolve('database', 'data.json'), JSON.stringify({ todos }));
-  res.status(200).end('OK');
+  });
+  todo.save()
+    .then(saved => res.status(200).end('OK'))
+    .catch(error => res.status(500).end('PAS OK'));
 }
 
 exports.updateTodo = (req, res) => {
