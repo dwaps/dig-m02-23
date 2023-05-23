@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const { resolve } = require('path');
 const router = require('./routing');
+require('./database');
 
 app.set('view engine', 'pug');
 // app.set('views', resolve('views'));
