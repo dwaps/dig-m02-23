@@ -8,7 +8,7 @@ exports.presentationCtrl = (req, res) => {
   res.render('pages/presentation');
 }
 
-exports.todosCtrl = (req, res) => {
+exports.todosCtrl = (req, res) => {w
   Todo.find()
     .then(todos => res.render('pages/todos', { todos }))
     .catch(() => res.render('pages/todos', { todos: [] }))
