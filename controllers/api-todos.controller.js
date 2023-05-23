@@ -18,13 +18,15 @@ exports.createTodo = (req, res) => {
     done: false
   };
   todos.unshift(todo);
-  console.log(todo)
   writeFileSync(resolve('database', 'data.json'), JSON.stringify({ todos }));
   res.status(200).end('OK');
 }
 
 exports.updateTodo = (req, res) => {
-  res.json(todos);
+  const index = todos.findIndex(t => t.id == req.params.id);
+  todos.splice(index, 1, req.body);
+  writeFileSync(resolve('database', 'data.json'), JSON.stringify({ todos }));
+  res.status(200).end('OK');
 }
 
 exports.deleteTodo = (req, res) => {
